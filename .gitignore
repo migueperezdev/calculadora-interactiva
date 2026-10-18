@@ -1,0 +1,7 @@
+# Archivos generados por los sistemas operativos
+Thumbs.db
+Desktop.ini
+.DS_Store
+
+# Configuración personal del editor
+.vscode/
