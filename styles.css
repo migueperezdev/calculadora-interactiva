@@ -1,3 +1,29 @@
+:root {
+  --fondo-inicio: #667eea;
+  --fondo-fin: #764ba2;
+  --tarjeta: #ffffff;
+  --texto: #222222;
+  --pantalla: #222222;
+  --boton: #eeeeee;
+  --borrar-fondo: #fee2e2;
+  --borrar-texto: #991b1b;
+  --borde: #dddddd;
+  --foco: #5146a5;
+}
+
+body.modo-oscuro {
+  --fondo-inicio: #111827;
+  --fondo-fin: #312e81;
+  --tarjeta: #1f2937;
+  --texto: #f9fafb;
+  --pantalla: #111827;
+  --boton: #374151;
+  --borrar-fondo: #7f1d1d;
+  --borrar-texto: #fee2e2;
+  --borde: #4b5563;
+  --foco: #a5b4fc;
+}
+
 /* El ancho incluye el relleno y los bordes */
 * {
   box-sizing: border-box;
@@ -12,7 +38,8 @@ body {
   justify-content: center;
   align-items: center;
   font-family: Arial, sans-serif;
-  background: linear-gradient(135deg, #667eea, #764ba2);
+  background: linear-gradient(135deg, var(--fondo-inicio), var(--fondo-fin));
+  color: var(--texto);
 }
 
 /* Contenedor principal */
@@ -20,7 +47,7 @@ body {
   width: 100%;
   max-width: 360px;
   padding: 20px;
-  background: white;
+  background: var(--tarjeta);
   border-radius: 20px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
 }
@@ -37,7 +64,7 @@ h1 {
   min-height: 76px;
   margin-bottom: 16px;
   padding: 18px;
-  background: #222;
+  background: var(--pantalla);
   color: white;
   border-radius: 10px;
   font-size: 2rem;
@@ -57,8 +84,8 @@ button {
   padding: 16px 0;
   border: none;
   border-radius: 10px;
-  background: #eeeeee;
-  color: #222;
+  background: var(--boton);
+  color: var(--texto);
   font-family: inherit;
   font-size: 1.3rem;
   cursor: pointer;
@@ -77,18 +104,53 @@ button:active {
 
 /* Indicar el foco al navegar con el teclado */
 button:focus-visible {
-  outline: 3px solid #5146a5;
+  outline: 3px solid var(--foco);
   outline-offset: 2px;
 }
 
-/* El botón C ocupa tres columnas */
+/* El botón C ocupa dos columnas */
 .boton-borrar {
-  grid-column: span 3;
-  background: #fee2e2;
-  color: #991b1b;
+  grid-column: span 2;
+  background: var(--borrar-fondo);
+  color: var(--borrar-texto);
 }
 
 /* El botón 0 ocupa dos columnas */
 .boton-cero {
   grid-column: span 2;
+}
+
+.historial {
+  margin-top: 20px;
+  padding-top: 16px;
+  border-top: 1px solid var(--borde);
+}
+
+.historial h2 {
+  margin: 0 0 12px;
+  font-size: 1rem;
+}
+
+.historial ol {
+  margin: 0;
+  padding-left: 24px;
+}
+
+.historial li {
+  margin-bottom: 8px;
+  overflow-wrap: anywhere;
+}
+
+.control-tema {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 16px;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.control-tema input {
+  accent-color: var(--foco);
 }

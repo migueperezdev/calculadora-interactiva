@@ -14,12 +14,19 @@
     <main class="calculadora">
         <h1>Calculadora</h1>
 
+        <label class="control-tema">
+            <input type="checkbox" id="interruptor-tema">
+            Modo oscuro
+        </label>
+
         <div id="pantalla" class="pantalla">0</div>
 
         <div class="botones">
             <button type="button" class="boton-borrar" data-accion="limpiar">C</button>
-            <button type="button" data-operacion="/">÷</button>
 
+            <button type="button" data-accion="retroceder" aria-label="Borrar el último dígito">⌫</button>
+
+            <button type="button" data-operacion="/">÷</button>
             <button type="button" data-numero="7">7</button>
             <button type="button" data-numero="8">8</button>
             <button type="button" data-numero="9">9</button>
@@ -39,6 +46,15 @@
             <button type="button" data-numero=".">.</button>
             <button type="button" data-accion="calcular">=</button>
         </div>
+
+        <section class="historial" aria-labelledby="titulo-historial">
+            <h2 id="titulo-historial">Últimas operaciones</h2>
+
+            <p id="historial-vacio">Todavía no hay operaciones.</p>
+
+            <ol id="lista-historial"></ol>
+        </section>
+
     </main>
 </body>
 
